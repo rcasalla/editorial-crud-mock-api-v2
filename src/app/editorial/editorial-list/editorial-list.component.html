@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="col">
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Editorial Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let i of editorials">
+					<td style="cursor: pointer;">
+						<a class="figure-caption"
+							[routerLink]="['/editorials', { outlets: { 'right': [i.id] } }]">{{i.name}}</a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<button class="small" (click)="onSelectCreate()">Add Editorial</button>
+	</div>
+</div>
